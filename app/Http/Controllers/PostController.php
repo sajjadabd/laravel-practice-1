@@ -11,8 +11,8 @@ class PostController extends Controller
     public function list() {
        $posts = Post::latest()->with('user')->get();
        
-       return $posts;
-       //return view('home' , compact('posts'));
+       //return $posts;
+       return view('home' , compact('posts'));
     }
 
     public function createPost() {
@@ -23,14 +23,18 @@ class PostController extends Controller
 
     public function storePost(Request $request) {
 
-      
+      $validateData = request()->validate([
+        'content' => ['required'],
+      ]);
 
       //error_log('create post successfully');
       //$content = $request->input('content');
-      $content = $request->all();
+      $content = $validateData['content'];
       //error_log($content);
 
-      return $content;
+      return [
+        'content' => $content
+      ];
 
     }
 
