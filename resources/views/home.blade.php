@@ -8,13 +8,15 @@
   @vite('resources/css/app.css')
 </head>
 <body class="p-8">
-  <h1 class="text-2xl">
-    home
-  </h1>
+  
+  <a href="/create-post" class="inline-block text-2xl px-6 py-2 bg-sky-800 text-gray-200 hover:bg-sky-900 rounded-xl hover:ring-2 hover:shadow-md hover:shadow-slate-500 transition  hover:-translate-y-0.5 transform">
+    create new post
+  </a>
+  
 
   <hr class="m-4" />
 
-  <section class="flex flex-col space-y-16">
+  <section class="flex flex-col space-y-4">
     @foreach ( $posts as $post )
       <p >
         {{ $post->content }}

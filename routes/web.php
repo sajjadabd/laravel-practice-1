@@ -20,3 +20,4 @@ Route::get('/about', function () {
 
 
 Route::get('/', [PostController::class , 'list']);
+Route::get('/create-post', [PostController::class , 'createPost']);
