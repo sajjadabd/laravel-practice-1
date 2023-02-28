@@ -21,7 +21,7 @@ class PostController extends Controller
     }
 
 
-    public function storePost(Request $request) {
+    public function storePost() {
 
       $validateData = request()->validate([
         'content' => ['required'],
