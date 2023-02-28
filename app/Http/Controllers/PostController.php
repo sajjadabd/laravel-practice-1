@@ -18,4 +18,15 @@ class PostController extends Controller
       return view('create-post');
     }
 
+
+    public function storePost(Request $request) {
+
+
+      error_log('create post successfully');
+      $content = $request->input('content');
+      error_log($content);
+
+      return redirect('/');
+    }
+
 }
